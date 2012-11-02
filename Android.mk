@@ -42,7 +42,9 @@ LOCAL_C_INCLUDES += external/stlport/stlport/ \
 					external/libncurses/include \
 					external/libncurses/include/ncurses
 
-LOCAL_CFLAGS += -DCONFIG_LIBNL20
+LOCAL_CFLAGS += \
+	-DCONFIG_LIBNL20 \
+	-fno-strict-aliasing
 ifneq ($(TARGET_ARCH),arm)
 LOCAL_SHARED_LIBRARIES += libpci
 else #TARGET_ARCH != arm
